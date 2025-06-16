@@ -1,1 +1,1 @@
-## same thing as calculator api but with gin 😄
+## same thing as calculator api but with gin 😄 (was a lot easier)
