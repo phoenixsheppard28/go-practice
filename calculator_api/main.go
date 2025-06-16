@@ -9,8 +9,8 @@ import (
 )
 
 type Input struct {
-	Num1     int    `json:"num1"`
-	Num2     int    `json:"num2"`
+	Num1     *int   `json:"num1" validate:"required"`
+	Num2     *int   `json:"num2" validate:"required"`
 	Operator string `json:"operator" validate:"required"`
 }
 
@@ -33,8 +33,8 @@ func handle(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Error invalid input", 400)
 		return
 	}
-	num1 := input.Num1
-	num2 := input.Num2
+	num1 := *input.Num1
+	num2 := *input.Num2
 	oper := input.Operator
 	encoder := json.NewEncoder(w)
 
