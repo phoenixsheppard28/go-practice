@@ -40,6 +40,7 @@ func handle(c *gin.Context) {
 			c.JSON(http.StatusBadRequest, gin.H{
 				"error": "divide by zero",
 			})
+			return
 		}
 		res = num1 / num2
 	case "*":
@@ -50,6 +51,7 @@ func handle(c *gin.Context) {
 			c.JSON(http.StatusBadRequest, gin.H{
 				"error": "mod by zero",
 			})
+			return
 		}
 		res = num1 % num2
 
